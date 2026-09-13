@@ -26,4 +26,4 @@ export const apiErrorSchema = z.object({
   status: z.number(),
   details: z.record(z.string(), z.unknown()).optional(),
 });
-export type ApiErrorSchema = z.infer<typeof apiErrorSchema>;
+export type ApiErrorBody = z.infer<typeof apiErrorSchema>;
