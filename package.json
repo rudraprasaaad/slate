@@ -1,0 +1,20 @@
+{
+  "name": "slate",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev -w @slate/api\" \"npm run dev -w @slate/web\"",
+    "dev:api": "npm run dev -w @slate/api",
+    "dev:web": "npm run dev -w @slate/web",
+    "db:generate": "npm run db:generate -w @slate/api",
+    "db:push": "npm run db:push -w @slate/api",
+    "db:seed": "npm run db:seed -w @slate/api"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "concurrently": "^10.0.5"
+  }
+}
